@@ -6,6 +6,27 @@ function App() {
    const [char , setchar] = useState(0);
    const [word , setword] = useState(0);
    const [readingtime , setrt] = useState(0);
+   const [dark , setdark] = useState(false); 
+
+   function darklight (par){
+    if(par === "dark"){
+       setdark(true);
+    }
+    else if (par === "light"){
+       setdark(false);
+    }
+   }
+
+   useEffect(()=>{
+             if(dark === true){
+              // document.body.style.backgroundColor = '#';
+                document.body.style.color = '#333';
+             }
+             else if(dark === false){
+              // document.body.removeAttribute('data-theme');
+              document.body.style.color = 'pink';
+             }
+   }, [dark])
 
     function funall (e){
         settext(e.target.value);
@@ -49,7 +70,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App "  >
       
       <nav style={{display:"flex", justifyContent:"space-between", backgroundColor:"white", padding:"4px 40px"}}>
         <div style={{display:"flex", gap:"20px", alignItems:"center"}}>
@@ -59,7 +80,13 @@ function App() {
          <h3>Contact</h3>
          </div>
 
-         <h3>Enable Dark Mode</h3>
+         {
+          dark === false &&  <h3 onClick={() => darklight("dark")}> click here for Dark Mode</h3>
+         }
+         {
+          dark &&  <h3 onClick={() => darklight("light")}> click here for light Mode</h3>
+         }
+            
       </nav>
 
 
