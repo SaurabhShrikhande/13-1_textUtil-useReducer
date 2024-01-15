@@ -86,10 +86,11 @@ function App() {
     useEffect(()=> {
       let sentence = text.trim();
      const wor = sentence.split(/\s+/);
-        
-        setword(wor.length);
+        console.log(sentence);
+        console.log(wor);
+       if(text !== "") setword(wor.length);
         setchar(text.length);
-        setrt(wor.length * 0.008);
+        if(text !== "") setrt(wor.length * 0.008);
  
     }, [text])
 
