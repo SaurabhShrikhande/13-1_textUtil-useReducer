@@ -7,6 +7,14 @@ function App() {
    const [word , setword] = useState(0);
    const [readingtime , setrt] = useState(0);
    const [dark , setdark] = useState(false); 
+ const [dtheme, setdtheme] = useState({
+      backgroundColor : "black",
+      color : "white",
+      display:"flex", 
+      justifyContent:"space-between", 
+      padding:"4px 40px",
+ });
+ const [dthemee , setdthemee] = useState("Appp");
 
    function darklight (par){
     if(par === "dark"){
@@ -20,11 +28,28 @@ function App() {
    useEffect(()=>{
              if(dark === true){
               // document.body.style.backgroundColor = '#';
-                document.body.style.color = '#333';
+               //  document.body.style.color = '#333';
+               setdtheme({
+                  backgroundColor : "black",
+                  color : "white",
+                  display:"flex", 
+                  justifyContent:"space-between", 
+                  padding:"4px 40px"
+               }
+               )
+
+               setdthemee("Appp");
+               
              }
              else if(dark === false){
               // document.body.removeAttribute('data-theme');
-              document.body.style.color = 'pink';
+            //   document.body.style.color = 'pink';
+              setdtheme({ display:"flex", 
+              justifyContent:"space-between", backgroundColor:"white", padding:"4px 40px"
+
+              })
+              setdthemee("App");
+
              }
    }, [dark])
 
@@ -70,9 +95,9 @@ function App() {
 
 
   return (
-    <div className="App "  >
+    <div className= {dthemee} >
       
-      <nav style={{display:"flex", justifyContent:"space-between", backgroundColor:"white", padding:"4px 40px"}}>
+      <nav  style={dtheme} >
         <div style={{display:"flex", gap:"20px", alignItems:"center"}}>
          <h2 style={{color :"skyBlue"}}>TextUtils</h2>
          <h3>Home</h3>
@@ -90,7 +115,7 @@ function App() {
       </nav>
 
 
-      <div>
+      <div >
         <h1>TextUtis - Word Counter, Charecter Counter, Remove Extra Space</h1>
          <h2>Enter Your Text Here:</h2>
          <textarea rows="12" cols="70" value={text} className='textarea'

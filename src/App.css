@@ -3,6 +3,12 @@
   background: linear-gradient( 45deg, red, rgb(255, 255, 255), rgb(0, 0, 255));
 }
 
+.Appp {
+  text-align: center;
+  background: linear-gradient( 45deg, rgb(48, 15, 15), rgb(38, 36, 36), rgb(8, 8, 43));
+  color : white;
+}
+
 
 .btn {
   border-radius: 5px;
@@ -11,6 +17,7 @@
   font-weight: bold;
   font-size: 14px;
   box-shadow: 0px 2px 5px 2px transparent;
+  background: linear-gradient( 45deg, rgb(55, 11, 11), rgb(52, 47, 47), rgb(27, 27, 48));
 }
 
 .bgblue {
@@ -36,6 +43,9 @@
   padding: 20px;
   font-size: 20px;
 }
+
+
+
 
 /* .App-logo {
   height: 40vmin;
