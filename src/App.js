@@ -89,8 +89,10 @@ function App() {
         console.log(sentence);
         console.log(wor);
        if(text !== "") setword(wor.length);
+       if(text === "") setword(0);
         setchar(text.length);
         if(text !== "") setrt(wor.length * 0.008);
+        if(text === "") setrt(0);
  
     }, [text])
 
